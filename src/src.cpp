@@ -13,14 +13,14 @@ bool key6 = LOW;
 bool key7 = LOW;
 bool key8 = LOW;
 
-button b1(5, 15);
-button b2(4, 14);
-button b3(3, 16);
-button b4(2, 10);
-button b5(9, 21);
-button b6(8, 20);
-button b7(7, 19);
-button b8(6, 18);
+button b1(8, 16);
+button b2(7, 14);
+button b3(4, 19);
+button b4(2, 21);
+button b5(9, 10);
+button b6(6, 15);
+button b7(5, 18);
+button b8(3, 20);
 
 int blickpresslenght = 75;
 /*
@@ -168,10 +168,7 @@ void loop()
   }
   if (prevkey6 == LOW && key6 == HIGH)
   {
-    // generate uuid
-    /*String s = generateuuid();
-    Keyboard.print(s);
-    Serial.println(s);*/
+    // Keybind 6
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press(KEY_LEFT_ALT);
     Keyboard.press(KEY_F18);
@@ -181,18 +178,20 @@ void loop()
   }
   if (prevkey7 == LOW && key7 == HIGH)
   {
-    // Copy
+    // Keybind 7
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press('c');
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_F19);
     Keyboard.releaseAll();
     Serial.write('7');
     b7.blink(blickpresslenght);
   }
   if (prevkey8 == LOW && key8 == HIGH)
   {
-    // Paste
-    Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press('v');
+    // Keybind 8
+   Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_F20);
     Keyboard.releaseAll();
     Serial.write('8');
     b8.blink(blickpresslenght);
